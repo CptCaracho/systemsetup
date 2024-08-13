@@ -128,3 +128,5 @@ sudo rm -rf /usr/lib/python3.12/EXTERNALLY-MANAGED
 pip install buku
 pip install "buku[server]"
 pip install questionary
+
+sudo reboot
