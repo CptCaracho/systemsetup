@@ -2,19 +2,21 @@
 
 CURRENT_DIR="$(cd "$(dirname "$0")"; pwd)"
 
-sudo mkdir /mnt/nvme
-echo -e 'UUID=9726d2c5-fbb0-4697-8cd4-bbe4d0f802da /mnt/nvme ext4 defaults,noatime,rw,user,x-gvfs-show 0 2' | sudo tee -a /etc/fstab > /dev/null &&
-sleep 2
-sudo systemctl daemon-reload &&
-sleep 2
-sudo mount -a &&
-sleep 2
+if [ ! -d "$MOUNT_POINT" ]; then
+	sudo mkdir -p /mnt/nvme
+	echo -e 'UUID=9726d2c5-fbb0-4697-8cd4-bbe4d0f802da /mnt/nvme ext4 defaults,noatime,rw,user,x-gvfs-show 0 2' | sudo tee -a /etc/fstab > /dev/null &&
+	sleep 2
+	sudo systemctl daemon-reload &&
+	sleep 2
+	sudo mount -a &&
+	sleep 2
+fi
 
 # Add chaotic repo
 sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
 sudo pacman-key --lsign-key 3056513887B78AEB
-sudo pacman -U --needed --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
-sudo pacman -U --needed --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+sudo pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
+sudo pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
 echo -e '\n\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist' | sudo tee -a /etc/pacman.conf > /dev/null
 yay -Syu
 
