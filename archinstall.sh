@@ -20,6 +20,11 @@ if [ ! -d "/mnt/nvme" ]; then
 	yay -Syu
 fi
 
+# install rclone and setup $HOME
+sudo rm -rf $HOME
+sudo pacman -Syu --noconfirm rclone
+rclone sync -vv /mnt/nvme/backup/rclone $HOME
+
 # Install all packages
 yay -Syu --needed --noconfirm \
 autotiling \
@@ -109,10 +114,6 @@ yazi \
 yt-dlp \
 zellij \
 zenity
-
-# Rclone $HOME
-sudo rm -rf $HOME
-rclone sync -vv /mnt/nvme/backup/rclone $HOME
 
 # enable services
 sudo systemctl enable --now docker.service
