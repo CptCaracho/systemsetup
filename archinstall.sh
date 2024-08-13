@@ -115,6 +115,8 @@ yt-dlp \
 zellij \
 zenity
 
+curl -s https://raw.githubusercontent.com/jhuckaby/Cronicle/master/bin/install.js | sudo node
+
 # enable services
 sudo systemctl enable --now docker.service
 sudo systemctl enable --now keymapperd.service
