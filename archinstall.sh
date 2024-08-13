@@ -2,9 +2,12 @@
 
 CURRENT_DIR="$(cd "$(dirname "$0")"; pwd)"
 
-echo -e '\n\nUUID=9726d2c5-fbb0-4697-8cd4-bbe4d0f802da /mnt/nvme ext4 defaults,noatime,rw,user,uid=1000,gid=1000,x-gvfs-show 0 2' | sudo tee -a /etc/fstab > /dev/null
-sudo mount -a
-sudo systemctl daemon-reload
+echo -e '\n\nUUID=9726d2c5-fbb0-4697-8cd4-bbe4d0f802da /mnt/nvme ext4 defaults,noatime,rw,user,uid=1000,gid=1000,x-gvfs-show 0 2' | sudo tee -a /etc/fstab > /dev/null & & 
+sleep 2
+sudo mount -a & & 
+sleep 2
+sudo systemctl daemon-reload & & 
+sleep 2
 
 # Add chaotic repo
 sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
