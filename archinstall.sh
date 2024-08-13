@@ -2,7 +2,7 @@
 
 CURRENT_DIR="$(cd "$(dirname "$0")"; pwd)"
 
-if [ ! -d "$MOUNT_POINT" ]; then
+if [ ! -d "/mnt/nvme" ]; then
 	sudo mkdir -p /mnt/nvme
 	echo -e 'UUID=9726d2c5-fbb0-4697-8cd4-bbe4d0f802da /mnt/nvme ext4 defaults,noatime,rw,user,x-gvfs-show 0 2' | sudo tee -a /etc/fstab > /dev/null &&
 	sleep 2
