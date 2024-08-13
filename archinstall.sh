@@ -99,7 +99,7 @@ TelegramDesktop \
 vlc
 
 # install rclone and setup $HOME
-sudo pacman -Syu rclone
+sudo pacman -Syu --noconfirm rclone
 rclone sync -vv /mnt/nvme/backup/rclone $HOME
 
 # Install all packages
