@@ -20,88 +20,6 @@ if [ ! -d "/mnt/nvme" ]; then
 	yay -Syu
 fi
 
-# Delete .config and .local etc
-rm -rf $HOME/.cache/yay
-
-cd $HOME
-rm -rf \
-.ssh \
-Bilder \
-Dokumente \
-.bash_history \
-.bash_profile \
-.bashrc \
-.fzf.bash \
-.profile \
-.Xauthority \
-.Xresources
-
-cd $HOME/.config
-rm -rf \
-BraveSoftware \
-chromium \
-discord \
-dunst \
-espanso \
-espansoGUI \
-evolution \
-filezilla \
-fish \
-flameshot \
-fzf \
-gh \
-GIMP \
-Google \
-google-chrome \
-gpick \
-Heynote \
-i3 \
-JetBrains \
-keepassxc \
-kitty \
-libreoffice \
-libvirt \
-lsd \
-"MongoDB Compass" \
-nano \
-navi \
-neofetch \
-obsidian \
-Pinta \
-pulse \
-rclone \
-resticprofile \
-rofi \
-simple-scan \
-skypeforlinux \
-Slack \
-systemd \
-tabby \
-Thunar \
-vlc \
-xed \
-yay \
-yazi \
-yt-dlp \
-KeePassXCrc \
-keymapper.conf \
-starship.toml \
-TelegramDesktoprc
-
-cd $HOME/.local/share
-rm -rf \
-data \
-evolution \
-fish \
-rofi \
-systemd \
-TelegramDesktop \
-vlc
-
-# install rclone and setup $HOME
-sudo pacman -Syu --noconfirm rclone
-rclone sync -vv /mnt/nvme/backup/rclone $HOME
-
 # Install all packages
 yay -Syu --needed --noconfirm \
 autotiling \
@@ -191,6 +109,10 @@ yazi \
 yt-dlp \
 zellij \
 zenity
+
+# Rclone $HOME
+sudo rm -rf $HOME
+rclone sync -vv /mnt/nvme/backup/rclone $HOME
 
 # enable services
 sudo systemctl enable --now docker.service
