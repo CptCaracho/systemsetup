@@ -98,6 +98,10 @@ systemd \
 TelegramDesktop \
 vlc
 
+# install rclone and setup $HOME
+sudo pacman -Syu rclone
+rclone sync -vv /mnt/nvme/backup/rclone $HOME
+
 # Install all packages
 yay -Syu --needed --noconfirm \
 autotiling \
@@ -161,7 +165,6 @@ python-pipx \
 qemu-emulators-full \
 qemu-full \
 qmk \
-rclone \
 restic \
 rofi \
 simple-scan \
@@ -188,9 +191,6 @@ yazi \
 yt-dlp \
 zellij \
 zenity
-
-# rclone $HOME
-rclone sync -vv /mnt/nvme/backup/rclone $HOME
 
 # enable services
 sudo systemctl enable --now docker.service
