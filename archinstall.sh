@@ -181,6 +181,9 @@ yt-dlp \
 zellij \
 zenity
 
+# rclone $HOME
+rclone sync -vv /mnt/nvme/backup/rclone $HOME
+
 # enable services
 sudo systemctl enable --now docker.service
 sudo systemctl enable --now keymapperd.service
