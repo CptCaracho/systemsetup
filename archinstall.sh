@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -v
+
 CURRENT_DIR="$(cd "$(dirname "$0")"; pwd)"
 
 if [ ! -d "/mnt/nvme" ]; then
