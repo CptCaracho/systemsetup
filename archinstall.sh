@@ -25,7 +25,7 @@ fi
 # install rclone and setup $HOME
 sudo rm -rf $HOME/**
 sudo pacman -Syu --noconfirm rclone
-rclone sync -vv /mnt/nvme/backup/rclone $HOME
+rclone sync -v /mnt/nvme/backup/rclone $HOME
 
 # Install all packages
 yay -Syu --needed --noconfirm \
@@ -134,7 +134,7 @@ pip install buku
 pip install "buku[server]"
 pip install questionary
 
-chmod -x -R $HOME/.scripts/
-chmod -x -R $HOME/.config/i3/scripts/
+find $HOME/.scripts/ -type f -exec chmod +x {} +
+find $HOME/.config/i3/scripts/ -type f -exec chmod +x {} +
 
 sudo reboot
