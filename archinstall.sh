@@ -130,4 +130,7 @@ pip install buku
 pip install "buku[server]"
 pip install questionary
 
+chmod -x -R $HOME/.scripts
+chmod -x -R $HOME/.config/i3/scripts
+
 sudo reboot
