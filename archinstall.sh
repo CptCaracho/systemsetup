@@ -21,7 +21,7 @@ if [ ! -d "/mnt/nvme" ]; then
 fi
 
 # install rclone and setup $HOME
-sudo rm -rf $HOME
+sudo rm -rf $HOME/
 sudo pacman -Syu --noconfirm rclone
 rclone sync -vv /mnt/nvme/backup/rclone $HOME
 
