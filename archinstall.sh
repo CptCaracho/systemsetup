@@ -118,6 +118,8 @@ zellij \
 zenity
 
 curl -s https://raw.githubusercontent.com/jhuckaby/Cronicle/master/bin/install.js | sudo node
+sudo /opt/cronicle/bin/control.sh setup
+sudo /opt/cronicle/bin/control.sh start
 
 # enable services
 sudo systemctl enable --now docker.service
