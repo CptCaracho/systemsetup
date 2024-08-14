@@ -95,6 +95,7 @@ qemu-emulators-full \
 qemu-full \
 qmk \
 restic \
+ristretto \
 rofi \
 simple-scan \
 simplescreenrecorder \
