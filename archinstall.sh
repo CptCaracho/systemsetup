@@ -56,6 +56,7 @@ firefox-i18n-de \
 fish \
 fisher \
 flameshot \
+gimp \
 github-cli \
 gnome-disk-utility \
 gpick \
@@ -88,6 +89,7 @@ obsidian \
 oil-search \
 otf-monaspace-nerd \
 picom \
+pinta \
 podman \
 python-pipenv \
 python-pipx \
