@@ -37,6 +37,8 @@ autotiling \
 bash-language-server \
 bat \
 brave-bin \
+breeze \
+breeze-gtk \
 brother-dcpj572dw \
 buku \
 cargo \
@@ -71,6 +73,7 @@ lib32-gcc-libs \
 libreoffice-still \
 libguestfs \
 libvirt \
+lightdm-settings \
 lsd \
 luckybackup \
 man-db \
