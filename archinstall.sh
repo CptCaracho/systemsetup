@@ -24,7 +24,7 @@ fi
 
 # Update mirrorlist
 sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
-sudo reflector --verbose --country DE,FR,DK,BE --protocol https --sort rate --latest 20 --download-timeout 6 --save /etc/pacman.d/mirrorlist
+sudo reflector --verbose --country DE,FR,DK,BE --protocol https --sort rate --latest 30 --download-timeout 20 --save /etc/pacman.d/mirrorlist
 
 # install rclone and setup $HOME
 sudo rm -rf $HOME/**
@@ -148,5 +148,9 @@ pip install questionary
 
 find $HOME/.scripts/ -type f -exec chmod +x {} +
 find $HOME/.config/i3/scripts/ -type f -exec chmod +x {} +
+
+# Register espanso as a systemd service (required only once)
+espanso service register
+espanso start
 
 #sudo reboot
