@@ -43,6 +43,7 @@ brother-dcpj572dw \
 buku \
 cargo \
 cups \
+davfs2 \
 deno \
 discord \
 distrobox \
@@ -62,8 +63,11 @@ gimp \
 github-cli \
 gnome-disk-utility \
 gpick \
+gvfs \
+gvfs-dnssd \
 heynote-bin \
 jetbrains-toolbox \
+jgmenu \
 jq \
 just \
 keepassxc \
@@ -100,6 +104,7 @@ qemu-emulators-full \
 qemu-full \
 qmk \
 restic \
+resticprofile \
 ristretto \
 rofi \
 simple-scan \
