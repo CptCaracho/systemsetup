@@ -40,6 +40,7 @@ brave-bin \
 breeze \
 breeze-gtk \
 brother-dcpj572dw \
+brscan4 \
 buku \
 cargo \
 cups \
@@ -51,6 +52,7 @@ dmenu \
 docker \
 docker-compose \
 espanso-x11 \
+evince \
 evolution \
 fd \
 feh \
@@ -112,6 +114,7 @@ simplescreenrecorder \
 skypeforlinux-bin \
 slack-desktop \
 starship \
+syncthing \
 tabby \
 telegram-desktop \
 unrar \
