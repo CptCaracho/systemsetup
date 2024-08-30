@@ -42,6 +42,7 @@ breeze-gtk \
 brother-dcpj572dw \
 brscan4 \
 buku \
+buttercup-desktop \
 cargo \
 cups \
 davfs2 \
